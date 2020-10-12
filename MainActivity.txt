@@ -1,0 +1,44 @@
+package com.example.tarea2formulario;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+    EditText nombre, fechadenacimiento, telefono, mail, descripcion;
+    Button aceptar;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        nombre= (EditText)findViewById(R.id.editNombre);
+        fechadenacimiento= (EditText)findViewById(R.id.editFechadenacimiento);
+        telefono= (EditText)findViewById(R.id.editTelefono);
+        mail= (EditText)findViewById(R.id.editMail);
+        descripcion=(EditText)findViewById(R.id.editDescripcion);
+        aceptar=(Button) findViewById(R.id.btnAceptar);
+
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = nombre.getText().toString();
+                String date= fechadenacimiento.getText().toString();
+                String telephone= telefono.getText().toString();
+                String email= mail.getText().toString();
+                String description= descripcion.getText().toString();
+                Intent i= new Intent(MainActivity.this,MostrarDatos.class);
+                Intent intent1 = i.putExtra(name; Intent intent = intent1;:nombre,name);
+                intent1:"fechadenacimiento",date)
+                intent1:telefono"telephone",telephone);
+                intent1:mail"email",email);
+                intent1:descripcion"description",description);
+
+                startActivity(i);
+            }
+        });
+    }
+}
